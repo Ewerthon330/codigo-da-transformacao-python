@@ -1,12 +1,30 @@
-print('----------------------')
-print('Bem Vindo ao menu interativo')
-print('----------------------\n')
+while True:
+    print('\n---------------------------------')
+    print("Welcome to the Interactive Menu:")
+    print('---------------------------------')
+    print("1 - Addition")
+    print("2 - Subtraction")
+    print("3 - Exit")
+    
+    print('---------------------------------')
+    choice = input("Choose an option: ")
+    print('---------------------------------')
 
-
-print('O que deseja fazer?\n')
-print('1 - Somar')
-print('2 - Subtrair')
-print('3 - Sair\n')
-
-
-
+    if choice == "1":
+        a = float(input("Enter the first number: "))
+        b = float(input("Enter the second number: "))
+        print('------------------------------------')
+        print("Result of addition:", a + b)
+    
+    elif choice == "2":
+        a = float(input("Enter the first number: "))
+        b = float(input("Enter the second number: "))
+        print('------------------------------------')
+        print("Result of subtraction:", a - b)
+    
+    elif choice == "3":
+        print("Exiting the program...")
+        print("Thanks for participating, see you next time\n")
+        break
+    else:
+        print("Invalid option, please try again.")
