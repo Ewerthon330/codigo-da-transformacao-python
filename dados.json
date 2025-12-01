@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "Neymar",
+        "idade": "33",
+        "cidade": "Santos",
+        "telefone": "11922337788",
+        "email": "neymar@gmail.com",
+        "cpf": "13579246810",
+        "endereço": "rua das águas, 10"
+    },
+    {
+        "nome": "Lionel Ronaldo",
+        "idade": "39",
+        "cidade": "Porto",
+        "telefone": "11990805476",
+        "email": "lionaldo@gmail.com",
+        "cpf": "48903108900",
+        "endereço": "rua buenos aires, 1000"
+    }
+]
