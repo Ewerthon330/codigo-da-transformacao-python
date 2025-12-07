@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>
+        {% if produto %} Editar Produto {% else %} Novo Produto {% endif %}
+    </h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Nome:</label><br>
+        <input type="text" name="nome" value="{{ produto.nome|default:'' }}"><br><br>
+
+        <label>Descrição:</label><br>
+        <textarea name="descricao">{{ produto.descricao|default:'' }}</textarea><br><br>
+
+        <label>Preço:</label><br>
+        <input type="text" name="preco" value="{{ produto.preco|default:'' }}"><br><br>
+
+        <label>Quantidade:</label><br>
+        <input type="number" name="quantidade" value="{{ produto.quantidade|default:'' }}"><br><br>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+    <br>
+    <a href="{% url 'lista_produtos' %}">Voltar</a>
+
+</body>
+</html>

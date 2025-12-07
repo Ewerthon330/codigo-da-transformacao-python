@@ -1,0 +1,40 @@
+<h1>Lista de Produtos</h1>
+
+<!-- Formulário de busca -->
+<form method="GET" action="">
+    <input type="text" name="q" placeholder="Buscar produto..." value="{{ busca }}">
+    <button type="submit">Buscar</button>
+</form>
+
+<hr>
+
+<ul>
+    {% for produto in page_obj %}
+        <li>
+            {{ produto.nome }} — R$ {{ produto.preco }}  
+            <a href="{% url 'editar_produto' produto.id %}">Editar</a>
+            <a href="{% url 'excluir_produto' produto.id %}">Excluir</a>
+        </li>
+    {% empty %}
+        <li>Nenhum produto encontrado.</li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<!-- Paginação -->
+<div>
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}&q={{ busca }}">Anterior</a>
+    {% endif %}
+
+    <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}&q={{ busca }}">Próxima</a>
+    {% endif %}
+</div>
+
+<hr>
+
+<a href="{% url 'criar_produto' %}">Novo Produto</a>
